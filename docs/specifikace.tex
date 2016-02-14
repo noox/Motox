@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+
+\title{Specifikace zápočtového programu}
+\author{Kateřina Nevolová \\ \texttt{katka.nevolova@gmail.com} \\ 73502469}
+
+\begin{document}
+\maketitle
+
+Jako zápočtový program pro předmět Programování v C++ jsem si vybrala 2D motokrosovou plošinovou hru pravděpodobně nejvíce podobnou hře X-Moto (http://cs.wikipedia.org/wiki/X-Moto) nebo starší a možná známější ElastoManii (http://cs.wikipedia.org/wiki/Elasto\_Mania). Hra bude ovšem tematicky poněkud upravená -- specificky nepůjde pouze o motorovou balancovanou gymnastiku, ale hráč si bude hru moci zpestřit plamenometem, kterým se bude vhodně zbavovat různých nepřátelských objektů.
+
+Hra bude nabízet pouze jediný režim, a to samostatnou jízdu pro jednoho hráče v nějaké mapě na čas. Hráč bude svou motorku ovládat klávesnicí (podobně jako ve výše zmíněných hrách), ovládání bude doplněno možností střílet nebo provádět nějaké jiné důležité úkony.
+
+\section{Technický popis}
+
+Hra bude klasickým případem 2D plošinovky sledované ``z boku''. Grafika, převážně jednoduchá až vintage-vektorová, bude pro jednoduchost a přenositelnost kreslená pomocí OpenGL. Pro interakci se systémem a uživatelem bude použita neméně přenositelná knihovna GLUT, ostatní pomocné interfacy budou napsány v duchu C++ tradice (iostream na načítání map apod.).
+
+Motorka a prostředí bude z fyzikálního hlediska popsané jako klasické algebraické objekty podléhající vzájemným kolizím a přírodním zákonům. Simulace motorky, která je pro ``reálně vyhlížející'' jízdu obzvláště důležitá, bude provedena pomocí pružinového modelu, který bude u sebe držet jednotlivé součásti.
+
+Mapy jednotlivých levelů a prostředí bude možné načítat z jednoduchého textového a (relativně) uživatelsky přátelského souboru.
+
+Hra bude vyvíjena primárně pro platformu GNU/Linux s běžným prostředím X11 (kvůli OpenGL), ale bude kladen důraz na možnou kompilaci i pro ostatní systémy.
+
+\end{document}
+
